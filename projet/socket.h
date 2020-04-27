@@ -18,7 +18,7 @@ enum mode_comm
 #define socket_write(n, sockfd, buffer, size) \
     {                                         \
         n = write(sockfd, buffer, size);      \
-        if (n < 0)                            \
+        if (n <= 0)                            \
             error("Erreur écriture socket");  \
     }
 
@@ -26,7 +26,7 @@ enum mode_comm
 #define socket_read(n, sockfd, buffer, size) \
     {                                        \
         n = read(sockfd, buffer, size);      \
-        if (n < 0)                           \
+        if (n <= 0)                           \
             error("Erreur lecture socket");  \
     }
 
